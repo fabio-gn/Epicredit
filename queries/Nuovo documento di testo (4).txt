@@ -1,0 +1,39 @@
+select count () from Orders
+
+select count () from customers
+
+select count () from customers 
+where City = 'London'
+
+
+select orderid, avg (freight) as mediaspesetrasporto from orders
+group by freight , orderid
+
+
+select orderid, avg (freight) as mediaspesetrasportobottm from orders
+group by orderid , customerid
+having CustomerID = 'BOTTM'
+
+
+select CustomerID, sum (freight) as sommaspesetrasporto from orders
+group by customerid, freight 
+
+select count () from customers 
+group by city 
+
+select sum (unitprice * quantity) as totale, orderID from [order details]
+group by orderid
+
+select sum (unitprice * quantity) as tot10248, orderid from [Order Details]
+group by OrderID
+having OrderID = 10248
+
+select count (categoryID) as censiti, categoryID from products
+group by CategoryID
+
+select count (shipcountry) as ordini, shipcountry from orders
+group by ShipCountry
+
+
+select avg (freight) as costospedizioni , shipcountry from orders
+group by ShipCountry
